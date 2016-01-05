@@ -78,10 +78,6 @@ describe("Airport", function(){
 				airport.takeOff(plane)
 				expect(function() {airport.takeOff(plane)}).toThrowError("That plane isn't here!");
 			});
-
 		});
 	});
-
-
-
 }); 

@@ -26,7 +26,7 @@ Airport.prototype.land = function(plane) {
 };
 
 Airport.prototype.makesLanded = function(plane){
-	plane._notFlying;
+	plane._notFlying();
 };
 
 Airport.prototype._isStormy = function(){
@@ -66,7 +66,7 @@ Airport.prototype._removePlaneFromAirport = function(plane) {
 };
 
 Airport.prototype._makesFlying = function(plane){
-	plane._isFlying;
+	plane._isFlying();
 };
 
 
