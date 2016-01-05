@@ -1,14 +1,9 @@
-const MAX_CAPACITY = 40;
 
-function Airport() {
-	this.planes = []
+function Airport(maxcap) {
 
+	this.planes = [];
+	this.capacity = maxcap || 40;
 	
-};
-
-
-Airport.prototype.capacity = function() {
-	return MAX_CAPACITY;
 };
 
 
@@ -41,7 +36,7 @@ Airport.prototype._isPresent = function(plane){
 };
 
 Airport.prototype._isFull = function(){
-	this.planes.length >= MAX_CAPACITY;
+	this.planes.length >= this.capacity;
 
 };
 

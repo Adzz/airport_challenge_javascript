@@ -8,8 +8,8 @@ describe("Airport", function(){
 		plane = jasmine.createSpyObj("plane", ["_isFlying", "_notFlying"]);
 	});
 
-	it("Has a default capacity of MAX_CAPACITY", function(){
-		expect(airport.capacity()).toBe(MAX_CAPACITY)
+	it("Has a default capacity of 40", function(){
+		expect(airport.capacity).toBe(40)
 	});
 
 	describe("#land", function(){
