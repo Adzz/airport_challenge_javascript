@@ -2,11 +2,16 @@
 
 
 function Plane(){
-	this.isFlying = true;
+	this.flying = true;
 
 };
 
 
-Plane.prototype.notFlying = function() {
-	this.isFlying = false;
+Plane.prototype._notFlying = function() {
+	this.flying = false;
 }
+
+Plane.prototype._isFlying = function() {
+	this.flying = true;
+}
+

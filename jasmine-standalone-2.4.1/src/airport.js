@@ -26,7 +26,7 @@ Airport.prototype.land = function(plane) {
 };
 
 Airport.prototype.makesLanded = function(plane){
-	plane.notFlying;
+	plane._notFlying;
 };
 
 Airport.prototype._isStormy = function(){
@@ -52,21 +52,22 @@ Airport.prototype.takeOff = function(plane){
 	if(this._isStormy()) {
 		throw new TypeError("Conditions too stormy. No planes can take off.");
 	}
-	this.removePlaneFromAirport(plane);
-	this.makesFlying(plane);
+	this._removePlaneFromAirport(plane);
+	this._makesFlying(plane);
 	plane
 };
 
 
-Airport.prototype.removePlaneFromAirport = function(plane) {
+Airport.prototype._removePlaneFromAirport = function(plane) {
 	position = this.planes.indexOf(plane);
 	if (~position) {
 		this.planes.splice(position, 1);
 	}
 };
 
-
-
+Airport.prototype._makesFlying = function(plane){
+	plane._isFlying;
+};
 
 
 

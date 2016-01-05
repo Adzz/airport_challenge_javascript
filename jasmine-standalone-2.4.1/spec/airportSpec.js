@@ -5,7 +5,7 @@ describe("Airport", function(){
 
 	beforeEach(function(){
 		airport = new Airport();
-		plane = jasmine.createSpyObj("plane", ["isFlying", "notFlying"]);
+		plane = jasmine.createSpyObj("plane", ["_isFlying", "_notFlying"]);
 	});
 
 	it("Has a default capacity of MAX_CAPACITY", function(){
@@ -73,9 +73,14 @@ describe("Airport", function(){
 				expect(airport.planes.length).toEqual(0);
 			});
 
+			it("Won't take off a plane that isn't in the airport", function(){
+				airport.land(plane);
+				airport.takeOff(plane)
+				expect(function() {airport.takeOff(plane)}).toThrowError("That plane isn't here!");
+			});
+
 		});
 	});
-
 
 
 
